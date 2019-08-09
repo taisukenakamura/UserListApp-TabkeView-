@@ -8,15 +8,20 @@
 
 import UIKit
 
-class showViewController: UIViewController {
+class ShowViewController: UIViewController {
 
     var user : UserData?
-    
+
+    @IBOutlet weak var nameLabel: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+ //      nameLabel.text = user?.name
+ //      informationLabel.text = user?.info
+        
+        
+        }
     
 
     /*
