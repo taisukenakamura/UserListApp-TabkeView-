@@ -54,20 +54,17 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath){
-     //   selectedUserName = members[indexPath.row]
+        selectedUserName = members[indexPath.row]
         
         performSegue(withIdentifier: "showInformation", sender: nil)
     }
     
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-////        guard segue.identifier == "showInformation", let svc = segue.destination as? ShowViewController else{ return }
-//        
-//        if segue.identifier == "showInformation" {
-//            let nextVC = segue.destination as! ShowViewController
-//            nextVC.user = selectedUserName
-//        }
-//        
-//    }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard segue.identifier == "showInformation", let udv = segue.destination as? UserDataViewController else{ return }
+        
+        
+          udv.user =  selectedUserName
+    }
 }
+
